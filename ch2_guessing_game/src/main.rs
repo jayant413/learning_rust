@@ -4,8 +4,7 @@ use rand::Rng;
 
 fn main() {
     println!("Guess the number!");
-    let secret_number = rand::rng().random_range(1..=100);
-
+    let secret_number: u32 = rand::rng().random_range(1..=100);
     loop {
         println!("Please input your guess.");
         let mut guess: String = String::new();
@@ -19,7 +18,7 @@ fn main() {
             Err(_) => {
                 println!("Please enter a number!");
                 continue;
-            },
+            }
         };
 
         match guess.cmp(&secret_number) {
@@ -28,7 +27,7 @@ fn main() {
             Ordering::Equal => {
                 println!("You win!");
                 break;
-            },
+            }
         }
     }
 }
