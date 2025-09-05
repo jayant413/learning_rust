@@ -33,6 +33,12 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter => 25,
     }
 
+    if let Coin::Quarter = coin {
+        println!("The value of the coin is 25 cents");
+    } else {
+        println!("The value of the coin is not 25 cents");
+    }
+
 
 }
 
@@ -40,6 +46,12 @@ fn add_num(num: i32, num2: Option<i32>) -> i32 {
     match num2 {
         Some(i) => i + num,
         None => num,
+    }
+
+    if let Some(i) = num2 {
+        i + num
+    } else {
+        num
     }
 }
 
@@ -53,5 +65,23 @@ fn dice_roll(num: i32) {
         5 => println!("You rolled a 5"),
         6 => println!("You rolled a 6"),
         other => println!("You rolled a {}", other),
+    }
+
+    if num == 1 {
+        println!("You rolled a 1");
+    } else if num == 2 {
+        println!("You rolled a 2");
+    } else if num == 3 {
+        println!("You rolled a 3");
+    }
+    else if num == 4 {
+        println!("You rolled a 4");
+    } else if num == 5 {
+        println!("You rolled a 5");
+    } else if num == 6 {
+        println!("You rolled a 6");
+    }
+    else {
+        println!("You rolled a {}", num);
     }
 }
